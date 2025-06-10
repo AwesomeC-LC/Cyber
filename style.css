@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 20px; /* 保持一些边距，使得game-container不会贴边 */
     box-sizing: border-box;
-    overscroll-behavior: none;
+    overscroll-behavior: none; /* 新增：防止移动端下拉刷新或回弹，提升游戏体验 */
 }
 
 .game-container {
