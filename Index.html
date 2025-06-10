@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Miss.LuoEasy‘s Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1><i class="fas fa-gamepad"></i> Awesome-数字地鼠</h1>
+
+        <div class="settings-wrapper">
+            <div class="settings-panel">
+                <div>
+                    <label for="gameDuration"><i class="fas fa-hourglass-half"></i> 时长(秒):</label>
+                    <input type="number" id="gameDuration" value="60" min="30" max="600" step="10">
+                </div>
+                <div>
+                    <label for="difficultyLevel"><i class="fas fa-layer-group"></i> 难度:</label>
+                    <select id="difficultyLevel">
+                        <option value="simple">简单 (结果≤100)</option>
+                        <option value="normal" selected>正常</option>
+                    </select>
+                </div>
+                <!-- 新增音乐开关 -->
+                <div class="music-control">
+                    <label for="musicToggleBtn"><i class="fas fa-music"></i> 音乐:</label>
+                    <button id="musicToggleBtn" title="切换音乐">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="stats-panel">
+            <div id="timer-area">
+                <i class="fas fa-clock"></i> 时间: <span id="time-remaining">0</span>s
+            </div>
+            <div id="problem-area">
+                <i class="fas fa-question-circle"></i> 题目: <span id="problem">-</span>
+            </div>
+            <div id="score-area">
+                <i class="fas fa-star"></i> 得分: <span id="score">0</span>
+            </div>
+            <!-- 
+            <div id="combo-area">
+                <i class="fas fa-bolt"></i> 连击: <span id="combo-count">0</span>
+            </div>
+            <div id="correct-area">
+                <i class="fas fa-check-circle"></i> 答对: <span id="correct-count">0</span>
+            </div>
+             -->
+        </div>
+
+        <div id="message-area" class="message">
+            <i class="fas fa-info-circle"></i> 设置时长与难度，点击开始！
+        </div>
+
+        <div class="mole-grid">
+            <!-- 9个地鼠洞 -->
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+            <div class="mole-hole"><div class="mole-content"></div></div>
+        </div>
+
+        <button id="startButton"><i class="fas fa-play"></i> 开始游戏</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
