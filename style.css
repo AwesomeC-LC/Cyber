@@ -1,3 +1,5 @@
+/* --- START OF FILE style.css --- */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 更现代的字体 */
     display: flex;
@@ -8,67 +10,67 @@ body {
     margin: 0;
     padding: 20px; /* 保持一些边距，使得game-container不会贴边 */
     box-sizing: border-box;
-    overscroll-behavior: none; /* 新增：防止移动端下拉刷新或回弹，提升游戏体验 */
+    overscroll-behavior: none;
 }
 
 .game-container {
     background-color: rgba(255, 255, 255, 0.95); /* 半透明白色背景 */
-    padding: 24px; 
-    border-radius: 23px; 
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14); 
+    padding: 24px;
+    border-radius: 23px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
     text-align: center;
     width: 100%;
-    max-width: 590px; 
+    max-width: 590px;
 }
 
 h1 {
-    color: #e74c3c; 
+    color: #e74c3c;
     margin-top: 0;
-    margin-bottom: 24px; 
-    font-size: 2.1em;  
-    display: flex; 
+    margin-bottom: 24px;
+    font-size: 2.1em;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 h1 .fas {
-    margin-right: 9px; 
-    font-size: 0.9em; 
+    margin-right: 9px;
+    font-size: 0.9em;
 }
 
 .settings-wrapper {
-    margin-bottom: 19px; 
+    margin-bottom: 19px;
     background-color: #f9f9f9;
-    padding: 14px; 
-    border-radius: 9px; 
+    padding: 14px;
+    border-radius: 9px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }
 .settings-panel {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap; 
-    gap: 14px; 
+    flex-wrap: wrap;
+    gap: 14px;
 }
 .settings-panel div {
     display: flex;
     align-items: center;
 }
 .settings-panel label {
-    margin-right: 7px; 
+    margin-right: 7px;
     color: #555;
     font-weight: 500;
 }
 .settings-panel label .fas {
-    margin-right: 5px; 
+    margin-right: 5px;
     color: #3498db;
 }
 .settings-panel input[type="number"],
 .settings-panel select {
-    padding: 7px 9px; 
-    border-radius: 5px; 
+    padding: 7px 9px;
+    border-radius: 5px;
     border: 1px solid #ddd;
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-    min-width: 66px; 
+    min-width: 66px;
     text-align: center;
 }
 .settings-panel select {
@@ -114,39 +116,39 @@ h1 .fas {
     margin: 0; /* Reset any potential FontAwesome margins */
 }
 .stats-panel {
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 11px; 
-    margin-bottom: 24px; 
-    font-size: 1.05em; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+    margin-bottom: 24px;
+    font-size: 1.05em;
 }
 
-.stats-panel > div { 
+.stats-panel > div {
     background-color: #ffffff;
-    padding: 11px 14px; 
-    border-radius: 9px; 
+    padding: 11px 14px;
+    border-radius: 9px;
     color: #333;
     font-weight: 600;
-    box-shadow: 0 3px 9px rgba(0,0,0,0.06); 
+    box-shadow: 0 3px 9px rgba(0,0,0,0.06);
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     transition: transform 0.2s ease-out;
 }
 
-#timer-area, 
+#timer-area,
 #score-area {
     flex-grow: 1;
     flex-basis: 0;
     min-width: 90px;
-    font-size: 1.25em; 
+    font-size: 1.25em;
 }
 
 #problem-area {
-    flex-grow: 2; 
+    flex-grow: 2;
     flex-basis: 0;
-    min-width: 150px; 
-    font-size: 1.6em; 
+    min-width: 150px;
+    font-size: 1.6em;
 }
 
 #timer-area .fas { color: #e67e22; }
@@ -154,30 +156,30 @@ h1 .fas {
 #score-area .fas { color: #f1c40f; }
 
 .stats-panel > div .fas {
-    margin-right: 7px; 
-    font-size: 1.05em; 
+    margin-right: 7px;
+    font-size: 1.05em;
 }
 .stats-panel > div span {
-    color: #e74c3c; 
+    color: #e74c3c;
 }
 
 
 .message {
-    margin-bottom: 24px; 
-    font-size: 1.2em; 
-    min-height: 1.7em; 
+    margin-bottom: 24px;
+    font-size: 1.2em;
+    min-height: 1.7em;
     color: #555;
     font-weight: 600;
-    padding: 9px; 
-    border-radius: 7px; 
+    padding: 9px;
+    border-radius: 7px;
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .message .fas {
-    margin-right: 9px; 
-    font-size: 1.05em; 
+    margin-right: 9px;
+    font-size: 1.05em;
 }
 .message.correct { color: #27ae60; background-color: #e8f5e9;}
 .message.correct .fas { color: #27ae60; }
@@ -189,52 +191,59 @@ h1 .fas {
 .mole-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 17px; 
-    margin-bottom: 24px; 
-    max-width: 428px; 
+    gap: 17px;
+    margin-bottom: 24px;
+    /* MODIFICATION START: Set a max-width for desktop, but let it shrink on mobile */
+    width: 100%;
+    max-width: 428px;
+    /* MODIFICATION END */
     margin-left: auto;
     margin-right: auto;
 }
 
 .mole-hole {
-    width: 114px; 
-    height: 114px; 
+    /* MODIFICATION START: Replaced fixed width/height with aspect-ratio for responsiveness */
+    aspect-ratio: 1 / 1; /* This makes the hole a perfect square that scales with the grid column width */
+    /* width: 114px;  -- REMOVED */
+    /* height: 114px; -- REMOVED */
+    /* MODIFICATION END */
     background-color: #D2B48C;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 6px solid #8B4513; 
-    box-shadow: inset 0 0 11px rgba(0,0,0,0.33), 0 2px 5px rgba(0,0,0,0.1); 
-    overflow: hidden; 
+    border: 6px solid #8B4513;
+    box-shadow: inset 0 0 11px rgba(0,0,0,0.33), 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
     position: relative;
     transition: transform 0.2s;
 }
 .mole-hole:hover {
-    transform: scale(1.03); 
+    transform: scale(1.03);
 }
 
 .mole-content {
-    width: 90px; 
-    height: 90px; 
+    /* MODIFICATION START: Use percentage for size to scale with the mole-hole */
+    width: 80%;
+    height: 80%;
+    /* MODIFICATION END */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.1em; 
+    font-size: 2.1em;
     font-weight: bold;
     color: white; /* Default text color */
     cursor: pointer;
     user-select: none;
-    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.2s, color 0.1s; /* Added color transition */
-    transform: translateY(100%) scale(0.5); 
-    background-color: #A0522D; 
-    position: relative; 
-    /* overflow: visible; /* Ensure particles can fly out if desired, or hidden if preferred */
+    transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.2s, color 0.1s;
+    transform: translateY(100%) scale(0.5);
+    background-color: #A0522D;
+    position: relative;
 }
 
 .mole-content.active {
-    transform: translateY(0) scale(1); 
+    transform: translateY(0) scale(1);
 }
 
 .mole-content.hit-incorrect {
@@ -248,60 +257,58 @@ h1 .fas {
   50% { transform: translateX(10px); }
 }
 
-/* Firework Particle Styles */
 .firework-particle {
     position: absolute;
-    left: 50%; 
-    top: 50%;  
-    width: 8px; /* MODIFIED: Increased size */
-    height: 8px; /* MODIFIED: Increased size */
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     opacity: 1;
-    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); /* MODIFIED: Different easing */
-    /* Glow effect */
-    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor; /* MODIFIED: Added glow */
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
 }
 
 @keyframes firework-particle-animation {
     0% {
-        transform: translate(-50%, -50%) scale(0.6); /* Start slightly smaller for a pop effect */
+        transform: translate(-50%, -50%) scale(0.6);
         opacity: 1;
     }
-    70% { /* Hold opacity longer */
+    70% {
         opacity: 0.9;
     }
     100% {
-        transform: translate(var(--tx, -50%), var(--ty, -50%)) scale(0.2); /* MODIFIED: End a bit larger before disappearing */
+        transform: translate(var(--tx, -50%), var(--ty, -50%)) scale(0.2);
         opacity: 0;
     }
 }
 
 
 #startButton {
-    padding: 14px 33px; 
-    font-size: 1.33em; 
+    padding: 14px 33px;
+    font-size: 1.33em;
     color: white;
-    background-image: linear-gradient(to right, #ff7e5f, #feb47b); 
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
     border: none;
-    border-radius: 47px; 
+    border-radius: 47px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 14px rgba(254, 180, 123, 0.38); 
+    box-shadow: 0 5px 14px rgba(254, 180, 123, 0.38);
     font-weight: 600;
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 #startButton .fas {
-    margin-right: 9px; 
+    margin-right: 9px;
 }
 #startButton:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 19px rgba(254, 180, 123, 0.47); 
+    box-shadow: 0 8px 19px rgba(254, 180, 123, 0.47);
 }
 #startButton:active {
     transform: translateY(0px);
-    box-shadow: 0 3px 9px rgba(254, 180, 123, 0.28); 
+    box-shadow: 0 3px 9px rgba(254, 180, 123, 0.28);
 }
 #startButton:disabled {
     background-image: linear-gradient(to right, #ccc, #eee);
@@ -309,59 +316,93 @@ h1 .fas {
     cursor: not-allowed;
 }
 
-/* 响应式调整 */
+/* --- RESPONSIVE ADJUSTMENTS --- */
+/* MODIFICATION START: Updated responsive styles for better scaling */
+
+/* For Tablets and Large Phones (e.g., landscape) */
 @media (max-width: 640px) {
-    .stats-panel { 
-        font-size: 0.95em; 
-    } 
-    .mole-hole { 
-        width: 95px; 
-        height: 95px; 
-        border-width: 5px; 
+    .game-container {
+        padding: 15px;
     }
-    .mole-content { 
-        width: 76px; 
-        height: 76px; 
-        font-size: 1.7em; 
+    .stats-panel {
+        font-size: 0.95em;
     }
-    .firework-particle { /* Adjust particle size for smaller screens */
+    #problem-area {
+        font-size: 1.4em;
+    }
+    .mole-hole {
+        border-width: 5px;
+    }
+    .mole-content {
+        font-size: 1.9em; /* Adjusted font size */
+    }
+    .mole-grid {
+        gap: 14px;
+    }
+    .firework-particle {
         width: 6px;
         height: 6px;
     }
-    .mole-grid { 
-        max-width: 340px; 
-        gap: 14px; 
-    }
 }
+
+/* For Standard Phones (portrait) */
 @media (max-width: 480px) {
-    h1 { font-size: 1.7em; }
-    .settings-panel { flex-direction: column; gap: 9px; } 
-    .settings-panel > div { width: 100%; justify-content: space-between; }
-    .stats-panel { 
-        font-size: 0.85em; 
+    body {
+        padding: 10px;
     }
-    .stats-panel > div { padding: 9px; }
-    .mole-hole { 
-        width: 80px; 
-        height: 80px; 
-        border-width: 5px; 
+    .game-container {
+        padding: 12px;
     }
-    .mole-content { 
-        width: 66px; 
-        height: 66px; 
-        font-size: 1.5em; 
+    h1 {
+        font-size: 1.8em; /* Adjusted font size */
+        margin-bottom: 15px;
     }
-     .firework-particle { /* Adjust particle size for even smaller screens */
+    .settings-panel {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch; /* Make items full width */
+    }
+    .settings-panel > div {
+        width: 100%;
+        justify-content: space-between; /* This will push label and control apart */
+    }
+    .stats-panel {
+        font-size: 0.9em; /* Slightly larger for readability */
+        gap: 8px;
+    }
+    .stats-panel > div {
+        padding: 8px 10px;
+    }
+    #problem-area {
+        font-size: 1.2em;
+    }
+    #timer-area, #score-area {
+        font-size: 1.1em;
+    }
+
+    .mole-hole {
+        border-width: 4px;
+    }
+    .mole-content {
+        font-size: 1.6em; /* Adjusted font size */
+    }
+    .mole-grid {
+        gap: 10px; /* Adjusted gap */
+        margin-bottom: 20px;
+    }
+    .firework-particle {
         width: 5px;
         height: 5px;
     }
-    .mole-grid { 
-        max-width: 285px; 
-        gap: 9px; 
+
+    #startButton {
+        font-size: 1.2em;
+        padding: 12px 28px;
     }
-    #startButton { 
-        font-size: 1.14em; 
-        padding: 11px 24px; 
+    .message {
+        font-size: 1em;
+        padding: 8px;
+        margin-bottom: 20px;
     }
-    .message { font-size: 1.05em; }
 }
+/* MODIFICATION END */
