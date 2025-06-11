@@ -1,26 +1,29 @@
-/* --- START OF FILE style.css --- */
+/* --- START OF FILE style.css (Optimized for Mobile) --- */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 更现代的字体 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; /* 改为 flex-start 避免在小屏上垂直居中导致顶部被切割 */
     min-height: 100vh;
-    background: linear-gradient(135deg, #a0e7e5 0%, #f7c5a8 100%); /* 渐变背景 */
+    background: linear-gradient(135deg, #a0e7e5 0%, #f7c5a8 100%);
     margin: 0;
-    padding: 20px; /* 保持一些边距，使得game-container不会贴边 */
+    padding: 10px; /* 全局padding减小，给game-container更多空间 */
     box-sizing: border-box;
     overscroll-behavior: none;
 }
 
 .game-container {
-    background-color: rgba(255, 255, 255, 0.95); /* 半透明白色背景 */
+    background-color: rgba(255, 255, 255, 0.95);
     padding: 24px;
     border-radius: 23px;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
     text-align: center;
     width: 100%;
     max-width: 590px;
+    display: flex; /* 使用flexbox来更好地控制子元素 */
+    flex-direction: column; /* 垂直排列 */
+    justify-content: space-between; /* 均匀分布空间 */
 }
 
 h1 {
@@ -81,14 +84,14 @@ h1 .fas {
     align-items: center;
 }
 
-.settings-panel .music-control label { /* Style for the "音乐:" label part */
+.settings-panel .music-control label {
     margin-right: 8px;
     color: #555;
     font-weight: 500;
-    display: flex; /* To align icon and text nicely */
+    display: flex;
     align-items: center;
 }
-.settings-panel .music-control label .fas { /* Icon within the label */
+.settings-panel .music-control label .fas {
     margin-right: 5px;
     color: #3498db;
 }
@@ -96,13 +99,13 @@ h1 .fas {
 #musicToggleBtn {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 6px; /* Match select/input */
-    padding: 7px 10px; /* Match select/input */
+    border-radius: 6px;
+    padding: 7px 10px;
     cursor: pointer;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05); /* Match select/input */
-    font-size: 1em; /* Adjust icon size if needed */
-    color: #3498db; /* Icon color */
-    line-height: 1; /* Helps vertical alignment */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+    font-size: 1em;
+    color: #3498db;
+    line-height: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -113,7 +116,7 @@ h1 .fas {
 }
 
 #musicToggleBtn .fas {
-    margin: 0; /* Reset any potential FontAwesome margins */
+    margin: 0;
 }
 .stats-panel {
     display: flex;
@@ -193,20 +196,14 @@ h1 .fas {
     grid-template-columns: repeat(3, 1fr);
     gap: 17px;
     margin-bottom: 24px;
-    /* MODIFICATION START: Set a max-width for desktop, but let it shrink on mobile */
     width: 100%;
     max-width: 428px;
-    /* MODIFICATION END */
     margin-left: auto;
     margin-right: auto;
 }
 
 .mole-hole {
-    /* MODIFICATION START: Replaced fixed width/height with aspect-ratio for responsiveness */
-    aspect-ratio: 1 / 1; /* This makes the hole a perfect square that scales with the grid column width */
-    /* width: 114px;  -- REMOVED */
-    /* height: 114px; -- REMOVED */
-    /* MODIFICATION END */
+    aspect-ratio: 1 / 1;
     background-color: #D2B48C;
     border-radius: 50%;
     display: flex;
@@ -223,17 +220,15 @@ h1 .fas {
 }
 
 .mole-content {
-    /* MODIFICATION START: Use percentage for size to scale with the mole-hole */
     width: 80%;
     height: 80%;
-    /* MODIFICATION END */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.1em;
     font-weight: bold;
-    color: white; /* Default text color */
+    color: white;
     cursor: pointer;
     user-select: none;
     transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.2s, color 0.1s;
@@ -317,9 +312,9 @@ h1 .fas {
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
-/* MODIFICATION START: Updated responsive styles for better scaling */
+/* 以下是针对移动端适配的核心修改区域 */
 
-/* For Tablets and Large Phones (e.g., landscape) */
+/* For Tablets and Large Phones */
 @media (max-width: 640px) {
     .game-container {
         padding: 15px;
@@ -334,7 +329,7 @@ h1 .fas {
         border-width: 5px;
     }
     .mole-content {
-        font-size: 1.9em; /* Adjusted font size */
+        font-size: 1.9em;
     }
     .mole-grid {
         gap: 14px;
@@ -345,64 +340,88 @@ h1 .fas {
     }
 }
 
-/* For Standard Phones (portrait) */
+/* For Standard Phones (portrait) - 大幅优化区域 */
 @media (max-width: 480px) {
     body {
-        padding: 10px;
+        padding: 5px; /* 进一步减小 body 边距 */
     }
     .game-container {
-        padding: 12px;
+        padding: 10px; /* 减小容器内边距 */
+        border-radius: 15px; /* 稍微减小圆角 */
     }
     h1 {
-        font-size: 1.8em; /* Adjusted font size */
-        margin-bottom: 15px;
-    }
-    .settings-panel {
-        flex-direction: column;
-        gap: 10px;
-        align-items: stretch; /* Make items full width */
-    }
-    .settings-panel > div {
-        width: 100%;
-        justify-content: space-between; /* This will push label and control apart */
-    }
-    .stats-panel {
-        font-size: 0.9em; /* Slightly larger for readability */
-        gap: 8px;
-    }
-    .stats-panel > div {
-        padding: 8px 10px;
-    }
-    #problem-area {
-        font-size: 1.2em;
-    }
-    #timer-area, #score-area {
-        font-size: 1.1em;
+        font-size: 1.5em; /* 大幅减小标题字体 */
+        margin-bottom: 10px; /* 减小标题下边距 */
     }
 
+    .settings-wrapper {
+        padding: 8px; /* 减小设置面板内边距 */
+        margin-bottom: 10px; /* 减小设置面板下边距 */
+    }
+
+    /* 关键改动：保持设置面板横向布局，不再切换为纵向，并缩小内容 */
+    .settings-panel {
+        /* flex-direction: column; -- REMOVED */
+        gap: 8px; /* 减小项目间距 */
+        font-size: 0.8em; /* 整体缩小字体 */
+        justify-content: center; /* 居中显示 */
+    }
+    /* .settings-panel > div { ... } -- REMOVED */
+    .settings-panel input[type="number"],
+    .settings-panel select {
+        padding: 5px 6px; /* 减小输入框内边距 */
+        min-width: 50px; /* 减小最小宽度 */
+    }
+    #musicToggleBtn {
+        padding: 5px 8px; /* 减小音乐按钮内边距 */
+    }
+
+
+    /* 关键改动：缩小状态面板以保证其在一行内显示 */
+    .stats-panel {
+        font-size: 0.85em; /* 减小基础字体 */
+        gap: 6px; /* 减小间距 */
+        margin-bottom: 10px; /* 减小下边距 */
+    }
+    .stats-panel > div {
+        padding: 6px 8px; /* 大幅减小内边距 */
+        border-radius: 6px;
+    }
+    #problem-area {
+        font-size: 1.2em; /* 减小题目字体 */
+        min-width: 120px; /* 减小最小宽度 */
+    }
+    #timer-area, #score-area {
+        font-size: 1.0em; /* 减小时间和得分字体 */
+        min-width: 70px; /* 减小最小宽度 */
+    }
+
+    .message {
+        font-size: 0.9em; /* 减小消息字体 */
+        padding: 8px;
+        margin-bottom: 10px; /* 减小下边距 */
+        min-height: auto; /* 移除最小高度限制 */
+    }
+    .message .fas {
+        margin-right: 6px;
+    }
+
+    /* 关键改动：缩小地鼠区域 */
+    .mole-grid {
+        gap: 8px; /* 减小地鼠洞间距 */
+        margin-bottom: 10px; /* 减小下边距 */
+    }
     .mole-hole {
         border-width: 4px;
     }
     .mole-content {
-        font-size: 1.6em; /* Adjusted font size */
-    }
-    .mole-grid {
-        gap: 10px; /* Adjusted gap */
-        margin-bottom: 20px;
-    }
-    .firework-particle {
-        width: 5px;
-        height: 5px;
+        font-size: 1.6em; /* 减小地鼠数字字体 */
     }
 
+    /* 关键改动：缩小开始按钮 */
     #startButton {
-        font-size: 1.2em;
-        padding: 12px 28px;
-    }
-    .message {
-        font-size: 1em;
-        padding: 8px;
-        margin-bottom: 20px;
+        font-size: 1.1em;
+        padding: 10px 24px;
+        margin-top: auto; /* 尝试将按钮推到底部 */
     }
 }
-/* MODIFICATION END */
