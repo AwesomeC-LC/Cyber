@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let correctAnswersCount = 0;
     let maxSessionCombo = 0;
     let currentDifficulty = 'normal'; 
-    const bgMusic = new Audio('/music/mc.mp3'); // Create Audio object
+    const bgMusic = new Audio('/WhackaMole/music/mc.mp3'); // Create Audio object
     bgMusic.loop = true; // Enable looping
 
     let userMusicPreference = true; // User's choice via toggle, default ON
